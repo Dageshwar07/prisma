@@ -3,6 +3,7 @@ import "dotenv/config";
 import express from "express";
 const app = express();
 import userRoute from "./routes/userRoutes.js"
+import postRote from "./routes/postRoutes.js"
 const PORT = process.env.PORT || 3000;
 
 // * Middleware
@@ -13,6 +14,7 @@ app.get("/", (req, res) => {
   return res.send("Hi Everyone.");
 });
 
-app.use("/api/v1",userRoute)
+app.use("/api/v1/user",userRoute)
+app.use("/api/v1/post",postRote)
 
 app.listen(PORT, () => console.log(`Server is running on PORT ${PORT}`));
