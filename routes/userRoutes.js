@@ -14,6 +14,6 @@ router.get("/get", fetchUser);
 router.post("/create", createUser);
 router.put("/update/:id", updateUser);
 router.get("/get/:id", showUser);
-router.get("/delete/:id", deleteUser);
+router.delete("/delete/:id", deleteUser);
 
 export default router;
