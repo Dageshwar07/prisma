@@ -4,6 +4,7 @@ import express from "express";
 const app = express();
 import userRoute from "./routes/userRoutes.js"
 import postRote from "./routes/postRoutes.js"
+import commentRoute from "./routes/commentRoutes.js"
 const PORT = process.env.PORT || 3000;
 
 // * Middleware
@@ -16,5 +17,6 @@ app.get("/", (req, res) => {
 
 app.use("/api/v1/user",userRoute)
 app.use("/api/v1/post",postRote)
+app.use("/api/v1/comment",commentRoute)
 
 app.listen(PORT, () => console.log(`Server is running on PORT ${PORT}`));
